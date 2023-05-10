@@ -1,8 +1,8 @@
 def buildApp() {
-            echo "Before ${params.BRANCH-NM}"
-	    checkout scmGit(branches: [[name: "*/${params.BRANCH-NM}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git-cred', name: 'origin', url: 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git']])
-            echo "After ${params.BRANCH-NM}"
-	    echo "Git pull from ${BRANCH-NM}"
+            echo "Before ${params.BRANCH_NM}"
+	    checkout scmGit(branches: [[name: "*/${params.BRANCH_NM}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git-cred', name: 'origin', url: 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git']])
+            echo "After ${params.BRANCH_NM}"
+	    echo "Git pull from ${BRANCH_NM}"
 }
 
 def compileApp() {
