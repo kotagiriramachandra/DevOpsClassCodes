@@ -1,7 +1,7 @@
 def buildApp() {
-            echo 'Before'
-	    git branch: '${params.BRANCH-NM}', credentialsId: 'git-cred', url: 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git'
-            echo 'After'
+            echo "Before ${params.BRANCH-NM}"
+	    checkout scmGit(branches: [[name: "*/${params.BRANCH-NM}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git-cred', name: 'origin', url: 'https://github.com/kotagiriramachandra/DevOpsClassCodes.git']])
+            echo "After ${params.BRANCH-NM}"
 	    echo "Git pull from ${BRANCH-NM}"
 }
 
